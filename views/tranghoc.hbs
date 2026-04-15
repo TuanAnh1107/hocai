@@ -1,0 +1,102 @@
+<main class="studysite">
+
+    <nav class="listlesson">
+        <p>Tiến độ học tập</p>
+        <div class="progress-area">
+            <span class="progress-ratio"></span>
+            <div class="progress-bar">
+                <div class="progress" style="width: 70%;">
+                </div>
+            </div>
+        </div>
+        <h3>DANH SÁCH BÀI HỌC</h3>
+        <ul>
+            {{#each course.chapters}}
+            <li class="chapter">CHƯƠNG {{this.stt}}: {{this.name}}</li>
+            {{#each this.lessons}}
+            <li class="item{{#if this.isActive}} active{{/if}}{{#unless this.isUnlocked}} locked{{/unless}}"
+                data-id_chapter="{{this.chapter}}" data-id_lesson="{{this.id}}" data-stt="{{this.stt}}">
+                {{this.name}}
+            </li>
+            {{/each}}
+            {{/each}}
+        </ul>
+    </nav>
+    <section class="content">
+        <h2>Bài 1: Giới thiệu về ChatGPT</h2>
+        <div class="video-wrapper">
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/exampleVideoId"
+                title="Giới thiệu ChatGPT" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <h3 class="section-title">Giới thiệu về bài học</h3>
+        <div class="lesson-review">
+
+        </div>
+
+        <div class="highlight-box">
+            <h4>Nội dung chính</h4>
+
+        </div>
+
+
+        <div class="nav-buttons">
+            <button class="btn primary" id="completeBtn">Hoàn thành bài học</button>
+        </div>
+
+        <div class="comment-section">
+            <h4>Thảo luận <span>12 bình luận</span></h4>
+            <textarea id="commentInput" placeholder="Thêm bình luận của bạn..."></textarea>
+            <button class="btn comment-btn" id="sendComment">Gửi</button>
+
+            <div class="comments" id="commentList">
+                <p><strong>Nguyễn Văn</strong><br>Bài giảng rất hữu ích! Mình đã áp dụng và tiết kiệm được rất nhiều
+                    thời gian.
+                </p>
+                <p><strong>Lê Thị</strong><br>Có ai đã thử dùng ChatGPT để tạo đề thi chưa? Mình muốn biết kết quả như
+                    thế nào.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="popupquizz">
+        <div class="quiz-popup" id="quizPopup">
+            <div class="popup-content">
+                <h3>📝 Kiểm tra nhanh ( ô tròn là dạng câu hỏi chỉ chọn 1 đáp án đúng, ô vuông là dạng câu hỏi chọn 1
+                    hoặc nhiều
+                    đáp án
+                    đúng )</h3>
+
+                <form>
+                    <div class="question-box">
+                        <p>1. ChatGPT là sản phẩm của công ty nào?</p>
+                        <ul class="answer-list">
+                        </ul>
+                    </div>
+
+                    <div class="question-box">
+                        <p>2. Phiên bản miễn phí của ChatGPT có hạn chế gì?</p>
+                        <ul class="answer-list">
+                        </ul>
+                    </div>
+
+                    <div class="question-box">
+                        <p>3. Điền vào chỗ trống: ChatGPT là viết tắt của...</p>
+                        <input type="text" name="q3" placeholder="..."
+                            style="width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #ccc;">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Nộp bài kiểm tra</button>
+                    <div id="quizResult" style="display: none; margin-top: 1.5rem; text-align: center;">
+                        <p id="quizScore" style="font-weight: bold; font-size: 18px;"></p>
+                        <button type="button" id="finishQuizBtn" class="btn-submit" style="margin-top: 1rem;">Hoàn
+                            thành</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="icon" type="image/png" href="/images/logo/web.png">
+    <link rel="stylesheet" href="/css/headfoot.css">
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+    <header>
+        <section class="side-bar">
+            <div class="side-bar-container">
+                <div class="side-bar-logo">
+                    <a href="/" class="link"><img src="/images/logo/web.png" alt="logo"></a>
+                </div>
+                <div class="side-bar-menu">
+                    <ul>
+                        <li><a href="/" class="link">TRANG CHỦ</a></li>
+                        <li><a href="/gioithieu" class="link">GIỚI THIỆU hocAI</a></li>
+                        <li class="hasdropdown"><a>CHỌN KHOÁ HỌC</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/tranghoc" class="link">Ứng dụng trí tuệ nhân tạo ( ChatGPT, Deepseek,
+                                        Grok,...)</a>
+                                </li>
+                                <li><a href="#" class="link">Kahoot ( Tạo trò chơi giáo dục )</a></li>
+                                <li><a href="#" class="link">Gammar AI ( Tạo slide tự động )</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/donggop" class="link">ĐÓNG GÓP</a></li>
+                    </ul>
+                </div>
+                <div class="side-bar-toggle">
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <rect width="20" height="2" y="3" class="line-1"></rect>
+                        <rect width="20" height="2" y="9" class="line-2"></rect>
+                        <rect width="20" height="2" y="9" class="line-3"></rect>
+                        <rect width="20" height="2" y="15" class="line-4"></rect>
+                    </svg>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="login">
+            <div class="login-container">
+                <h1>Chào mừng bạn đến với,<img src="/images/logo/web.png" alt="hocAI"></h1>
+
+                {{#if successMessage}}
+                <p class="success-message">{{successMessage}}</p>
+                {{/if}}
+                {{#if errorMessage}}
+                <p class="error-message">{{errorMessage}}</p>
+                {{/if}}
+
+                <div class="login-box {{#unless isRegistering}}{{#unless isForgotPassword}}active{{/unless}}{{/unless}}">
+                    <h2>ĐĂNG NHẬP</h2>
+                    <form action="/login" method="post">
+                        <p>Tài khoản/Email <span class="login-required-note">*</span></p>
+                        <input type="text" name="email" placeholder="Nhập tài khoản hoặc email" required
+                            value="{{formData.email}}">
+                        <p>Mật khẩu <span class="login-required-note">*</span></p>
+                        <input type="password" name="password" placeholder="Nhập mật khẩu" required>
+                        <button type="submit">Đăng nhập</button>
+                    </form>
+                    <div class="login-text">
+                        <p><a href="#" id="forgot-password-link">Quên tài khoản hoặc mật khẩu</a></p>
+                        <p>Bạn chưa có tài khoản ?</p>
+                        <p id="signup"><a href="#">Đăng ký ngay</a></p>
+
+                        {{#if googleLoginEnabled}}
+                        <div class="google-login-button">
+                            <a href="/auth/google"> Đăng nhập bằng tài khoản Google</a>
+                            <img src="/images/logo/gg.png" alt="Google">
+                        </div>
+                        {{/if}}
+                    </div>
+                </div>
+
+                <div class="signup-box {{#if isRegistering}}active{{/if}}">
+                    <h2>ĐĂNG KÝ</h2>
+                    {{#if googleLoginEnabled}}
+                    <div class="google-login-button">
+                        <a href="/auth/google"> Đăng ký bằng tài khoản Google</a>
+                        <img src="/images/logo/gg.png" alt="Google">
+                    </div>
+                    {{/if}}
+                    <form action="/register" method="post">
+                        <p>Email <span class="login-required-note">*</span></p>
+                        <input type="email" name="email" placeholder="Email của bạn" required
+                            value="{{formData.email}}">
+                        <p>Tài khoản <span class="login-required-note">*</span></p>
+                        <input type="text" name="account" placeholder="Tài khoản (Không nhập ký tự đặc biệt)" required
+                            value="{{formData.account}}">
+                        <p>Tên hiển thị <span class="login-required-note">*</span></p>
+                        <input type="text" name="displayName" placeholder="Tên hiển thị trong thông tin của bạn"
+                            required value="{{formData.displayName}}">
+                        <p>Mật khẩu <span class="login-required-note">*</span></p>
+                        <input type="password" name="password" placeholder="Mật khẩu ít nhất 6 ký tự" required>
+                        <p>Xác nhận mật khẩu <span class="login-required-note">*</span></p>
+                        <input type="password" name="confirmPassword" placeholder="Xác nhận mật khẩu" required>
+                        <div class="signup-required">
+                            <input type="checkbox" name="agreeTerms" class="signup-choice" id="agreeTerms" required>
+                            <label for="agreeTerms">Tôi đồng ý với <a href="/csbm" target="_blank">chính sách bảo
+                                    mật</a>
+                                của hocAI <span class="login-required-note">*</span></label>
+                        </div>
+                        <button type="submit">Đăng ký</button>
+                    </form>
+
+                    <div class="login-text">
+                        <p>Bạn đã có tài khoản ?</p>
+                        <p id="login"><a href="#">Quay lại đăng nhập</a></p>
+                    </div>
+                </div>
+
+                <div class="forgot-password-box {{#if isForgotPassword}}active{{/if}}">
+                    <h2>TRỢ GIÚP</h2>
+                    <p class="forgot-password-note">
+                        Nhập email hoặc tài khoản đã đăng ký để tạo yêu cầu đặt lại mật khẩu.
+                        Hệ thống sẽ tạo một liên kết reset theo token. Khi chạy local, bạn sẽ thấy link test ngay tại đây.
+                    </p>
+                    <form action="/forgot-password" method="post">
+                        <p>Tài khoản/Email <span class="login-required-note">*</span></p>
+                        <input type="text" name="accountOrEmail" placeholder="Nhập tài khoản hoặc email" required
+                            value="{{forgotFormData.accountOrEmail}}">
+                        <button type="submit">Tiếp tục</button>
+                    </form>
+                    {{#if devResetLink}}
+                    <div class="dev-reset-link">
+                        <p>Link reset dùng cho local/dev:</p>
+                        <a href="{{devResetLink}}">{{devResetLink}}</a>
+                    </div>
+                    {{/if}}
+                    <div class="login-text">
+                        <p><a href="#" id="back-to-login">Quay lại đăng nhập</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="main-container">
+            <div class="footer-container">
+                <div class="footer-box">
+                    <div class="footer-box1">
+                        <img src="/images/logo/web.png" alt="logo">
+                    </div>
+                    <div class="footer-box2">
+                        <h3><a href="#" class="link">HƯỚNG DẪN SỬ DỤNG</a></h3>
+                        <h3><a href="/gioithieu" class="link">VỀ CHÚNG TÔI</a></h3>
+                        <h3><a href="/tranghoc" class="link">KHOÁ HỌC SỬ DỤNG CHATBOT AI</a></h3>
+                        <h3><a href="#" class="link">KHOÁ HỌC TẠO BÀI TẬP SỐ</a></h3>
+                        <h3><a href="#" class="link">KHOÁ HỌC TẠO SLIDE BẰNG AI</a></h3>
+                    </div>
+                    <div class="footer-box3">
+                        <h3><a href="/csbm" class="link">CHÍNH SÁCH BẢO MẬT</a></h3>
+                        <h3><a href="/feedback" class="link">PHẢN HỒI</a></h3>
+                    </div>
+                    <div class="footer-box4">
+                        <h3><a href="/tuyendung" class="link">TUYỂN DỤNG</a></h3>
+                        <h3><a href="#">LIÊN HỆ</a></h3>
+                        <a href="#"><img src="/images/logo/tele.png" alt="Telegram"></a>
+                        <a href="#"><img src="/images/logo/fb.png" alt="Facebook"></a>
+                    </div>
+                </div>
+                <p>© 2025 hocAI, HUST.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/all.js"></script>
+</body>
+
+</html>

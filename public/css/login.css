@@ -1,0 +1,302 @@
+.error-message {
+    color: rgb(232, 105, 105);
+    background-color: #ffebee;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.success-message {
+    color: rgb(124, 181, 98);
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.login-container {
+    width: 98%;
+    margin: auto;
+    border-radius: 30px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #F0F8FE, #A5C8D4);
+}
+
+/*Đánh dấu bắt buộc*/
+.login-required-note {
+    color: rgb(232, 105, 105);
+}
+
+.signup-required {
+    display: flex;
+    color: rgb(229, 227, 227);
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 80%;
+    font-size: 14px;
+}
+
+.signup-required a {
+    color: rgb(232, 105, 105);
+    text-decoration: none;
+
+}
+
+/*tick lựa chọn*/
+.signup-choice {
+    width: 12px;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 1px;
+    background-color: white;
+}
+
+/*login+signup box*/
+.login-container h1 {
+    opacity: 0;
+    animation-name: slideInFromTop;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    text-align: center;
+    font-size: 40px;
+    color: #003459;
+    margin-top: 60px;
+}
+
+.login-container h1 img {
+    padding-left: 10px;
+    height: 1.1em;
+    width: auto;
+}
+
+.login-box,
+.signup-box {
+    display: none;
+}
+
+.login-box.active,
+.signup-box.active {
+    opacity: 0;
+    animation-name: slideInFromBottom;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    margin-top: 20px;
+    width: 30%;
+    background-color: #003459;
+    border-radius: 20px;
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    padding: 20px 0px;
+}
+
+.login-box,
+.signup-box h2 {
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 0px 0px 10px 0px;
+}
+
+.signup-box>p {
+    padding-top: 10px;
+    font-size: 0.9em;
+    color: rgb(230, 230, 230);
+}
+
+/*form*/
+form p {
+    text-align: left;
+    padding: 10px 0px 5px 0px;
+    color: white;
+    font-size: 0.9em;
+}
+
+form {
+    width: 80%;
+    padding-bottom: 20px;
+}
+
+form input {
+    font-size: 0.9em;
+    border: none;
+    width: calc(100% - 20px);
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+form input::placeholder {
+    font-style: italic;
+    opacity: 0.5;
+}
+
+form input:focus {
+    outline: 1px dotted white;
+    outline-offset: 2px;
+}
+
+button {
+    font-size: 1em;
+    margin: 20px auto 0px auto;
+    background-color: #AEE2F6;
+    border: none;
+    padding: 10px 15px;
+    color: #003459;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.login-text {
+    color: white;
+    width: 80%;
+}
+
+.login-text p:nth-child(4) {
+    padding-bottom: 20px;
+}
+
+.login-text p {
+    text-align: left;
+    font-size: 0.8em;
+}
+#signup {
+    padding-bottom: 20px;
+}
+.login-text p a {
+    color: #AEE2F6;
+
+}
+
+/*google login*/
+.google-login-button {
+    padding: 5px 5px 5px 15px;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.google-login-button a {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.google-login-button img {
+    height: 3em;
+    width: auto;
+}
+
+.forgot-password-box {
+    display: none;
+}
+.forgot-password-box.active {
+    opacity: 0;
+    animation-name: slideInFromBottom;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    margin-top: 20px;
+    width: 30%;
+    background-color: #003459;
+    border-radius: 20px;
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    padding: 20px 0px;
+}
+.forgot-password-box h2 {
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 0px 0px 10px 0px;
+}
+
+.forgot-password-note {
+    width: 80%;
+    color: rgb(230, 230, 230);
+    font-size: 0.85em;
+    line-height: 1.5;
+    margin: 0 0 5px 0;
+}
+
+.dev-reset-link {
+    width: 80%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.dev-reset-link p {
+    margin: 0 0 8px 0;
+    color: white;
+    font-size: 0.85em;
+}
+
+.dev-reset-link a {
+    color: #AEE2F6;
+    word-break: break-all;
+    font-size: 0.85em;
+}
+
+@media screen and (max-width: 799px) {
+    .login-container h1 {
+        font-size: 30px;
+    }
+
+    .login-box.active,
+    .signup-box.active {
+        font-size: 17px;
+        width: 90%;
+    }
+
+    .google-login-button {
+        justify-content: space-evenly;
+        width: 80%;
+    }
+
+    .forgot-password-box.active {
+        font-size: 17px;
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+    .login-container h1 {
+        font-size: 35px;
+    }
+
+    .login-box.active,
+    .signup-box.active {
+        width: 60%;
+        font-size: 17px;
+    }
+
+    .google-login-button {
+
+        width: 50%;
+    }
+
+    .forgot-password-box.active {
+        width: 60%;
+        font-size: 17px;
+    }
+}

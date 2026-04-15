@@ -1,0 +1,314 @@
+.introduce-image1 {
+  animation: 1s slideInFromLeft ease-out forwards;
+}
+
+.introduce-image1 img {
+  width: 100vw;
+  height: auto;
+
+}
+
+.introduce-aboutHocAI-content p {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+.introduce-aboutHocAI-container {
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.introduce-aboutHocAI-image2 img {
+  border-radius: 510px;
+  margin-left: 150px;
+  width: 600px;
+  height: auto;
+}
+
+.introduce-aboutHocAI-content {
+  border-radius: 10px;
+  padding: 50px 55px;
+  background-color: #f9f9f9;
+  margin: 20px 0;
+  margin-left: 150px;
+  flex: 1;
+}
+
+.introduce-aboutHocAI-content img {
+  width: 200px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.target-container h1 {
+  margin-top: 200px;
+  padding: 10px 0px;
+  background-color: #003459;
+  color: white;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.target-content {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.target-box {
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px rgba(0, 34, 89, 0.25);
+  width: 32%;
+  height: 300px;
+  margin: 20px;
+  font-size: 25px;
+  color: #003459;
+  display: flex;
+  align-items: center;
+}
+
+.introduce-thankyou {
+  margin-top: 100px;
+
+}
+
+.introduce-thankyou h1 {
+  text-align: center;
+  color: #003459;
+}
+
+.object-container {
+  width: 100%;
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+
+}
+
+.object-arrow {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.arrow {
+  position: relative;
+  width: 400px;
+}
+
+.arrow img {
+  width: 100%;
+}
+
+.object-content {
+  width: 39%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.object-content>div {
+  text-align: center;
+}
+
+.object-content img {
+  width: 400px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.text p {
+  font-size: 30px;
+  text-align: center;
+
+}
+
+@media screen and (max-width: 799px) {
+  .introduce-aboutHocAI-container {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .introduce-aboutHocAI-image2 {
+    order: 2;
+  }
+
+  .introduce-aboutHocAI-content {
+    width: 90%;
+    margin-left: 0;
+    padding: 15px;
+    font-size: 16px;
+    text-align: center;
+    order: 1;
+  }
+
+  .introduce-aboutHocAI-image2 img,
+  .object-content img,
+  .arrow img {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .introduce-aboutHocAI-content img {
+    margin-top: 0px;
+  }
+
+  .target-container {
+    padding: 10 10px;
+  }
+
+  .target-container h1,
+  .introduce-thankyou h1 {
+    font-size: 25px;
+    text-align: center;
+
+    margin: 20px 0px;
+  }
+
+  .target-content {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .target-box {
+    width: 60%;
+    font-size: 20px;
+  }
+
+  .target-box p {
+    font-size: 1em;
+  }
+
+  .text p {
+    font-size: 17px;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .object-container {
+    flex-direction: column;
+    margin-top: 70px;
+    gap: 90px;
+  }
+
+  .object-content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+  }
+
+
+
+  .object-arrow {
+    width: 100%;
+    rotate: 85deg;
+    padding: 10px 0px;
+    height: auto;
+  }
+
+  .introduce-thankyou {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  .introduce-aboutHocAI-container {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .introduce-aboutHocAI-image2 {
+    order: 2;
+  }
+
+  .introduce-aboutHocAI-content {
+    width: 90%;
+    margin-left: 0;
+    padding: 15px;
+    font-size: 16px;
+    text-align: center;
+    order: 1;
+  }
+
+  .introduce-aboutHocAI-image2 img,
+  .object-content img,
+  .arrow img {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .introduce-aboutHocAI-content img {
+    margin-top: 0px;
+  }
+
+  .target-container h1,
+  .introduce-thankyou h1 {
+    font-size: 25px;
+    text-align: center;
+    padding: 10px 10px;
+    margin: 20px 0px;
+  }
+
+  .target-content {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .target-box {
+    width: 60%;
+    font-size: 20px;
+  }
+
+  .target-box p {
+    font-size: 1em;
+  }
+
+  .text p {
+    font-size: 17px;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .object-container {
+    flex-direction: column;
+    margin-top: 70px;
+    gap: 90px;
+  }
+
+  .object-content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+  }
+
+
+
+  .object-arrow {
+    width: 100%;
+    rotate: 85deg;
+    padding: 10px 0px;
+    height: auto;
+  }
+
+  .introduce-thankyou {
+    margin-top: 60px;
+  }
+}

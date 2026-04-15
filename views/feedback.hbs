@@ -1,0 +1,38 @@
+<main>
+    <section class="feedback-page">
+        <div class="main-container">
+            <div class="feedback-card">
+                <div class="feedback-copy">
+                    <p class="feedback-kicker">Phản hồi</p>
+                    <h1>Gửi góp ý cho hocAI</h1>
+                    <p>
+                        Nếu bạn gặp lỗi, muốn góp ý nội dung khóa học, hoặc muốn đề xuất tính năng mới,
+                        hãy để lại phản hồi tại đây. Với bản local hiện tại, phản hồi sẽ được lưu vào log của project.
+                    </p>
+                </div>
+
+                <div class="feedback-form-wrap">
+                    {{#if successMessage}}
+                    <p class="success-message">{{successMessage}}</p>
+                    {{/if}}
+                    {{#if errorMessage}}
+                    <p class="error-message">{{errorMessage}}</p>
+                    {{/if}}
+
+                    <form action="/feedback" method="post" class="feedback-form">
+                        <label for="name">Họ và tên</label>
+                        <input id="name" name="name" type="text" placeholder="Nhập họ tên của bạn" value="{{formData.name}}" required>
+
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="Nhập email để chúng tôi phản hồi" value="{{formData.email}}" required>
+
+                        <label for="message">Nội dung phản hồi</label>
+                        <textarea id="message" name="message" rows="8" placeholder="Mô tả lỗi hoặc góp ý của bạn" required>{{formData.message}}</textarea>
+
+                        <button type="submit">Gửi phản hồi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

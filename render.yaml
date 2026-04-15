@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: hoc-ai
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm ci
+    startCommand: npm start
+    autoDeployTrigger: commit
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: 4000
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        value: hocai
+      - key: DB_SSL_ENABLED
+        value: true
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: TRUST_PROXY
+        value: true
+      - key: AUTO_INIT_DB
+        value: true
+      - key: SHOW_DEV_RESET_LINK
+        value: false
+      - key: PASSWORD_RESET_TOKEN_TTL_MINUTES
+        value: 30
+      - key: STARTUP_RETRY_ATTEMPTS
+        value: 20
+      - key: STARTUP_RETRY_DELAY_MS
+        value: 5000
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false

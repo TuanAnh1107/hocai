@@ -1,0 +1,10 @@
+# Node.js
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+logs/*.log
+client_secret*.json
+oauth-client*.json
+credentials*.json

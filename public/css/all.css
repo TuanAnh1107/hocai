@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    font-family: "Nunito Sans", sans-serif;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: bold;
+
+}
+
+h2 {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main-container {
+    width: 95%;
+    margin: auto;
+}
+
+/*hiệu ứng scroll*/
+.scroll {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    will-change: opacity, transform;
+}
+
+.scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*chatbutton*/
+.chat-button {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background-color: #91ccf7;
+    color: white;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.chat-button img {
+    width: 40%;
+    height: auto;
+    animation: laclu 0.5s linear infinite alternate;
+}
+
+.chat-button:hover {
+    background-color: #76c1f6;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/*hiệu ứng động*/
+@keyframes laclu {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes laclu2 {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(2px);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100px);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromMid {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 110px;
+    left: 30px;
+    width: 350px;
+    height: 500px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-popup.show {
+    display: flex;
+}
+
+.chat-header {
+    background-color: #003459;
+    color: white;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.close-chat-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Tùy chỉnh thanh cuộn cho chat-messages */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 70%;
+    word-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.message.user {
+    background-color: #395b7f;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+    word-break: break-word;
+}
+
+.message.bot {
+    background-color: #e5e5ea;
+    color: black;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+    word-break: break-word;
+}
+
+.chat-input-area {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    background-color: white;
+}
+
+#chatInput {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+#sendChatBtn {
+    padding: 10px 20px;
+    background-color: #395b7f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#sendChatBtn:hover {
+    background-color: #0056b3;
+}
+
+/*cuộn lên đầu trang*/
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #91ccf7;
+    color: white;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    transition: all 0.3s ease-in-out;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top img {
+    width: 40%;
+    height: auto;
+    animation: laclu2 0.5s linear infinite alternate;
+}
+
+.scroll-to-top:hover {
+    background-color: #76c1f6;
+    transform: scale(1.1);
+
+}
+/*animation chuyển sang trang khác*/
+body {
+    animation: slideInFromRight 0.5s ease-out;
+    transition: transform 0.5s ease-out, opacity 0.4s ease-out;
+}
+
+body.page-exiting-left {
+    transform: translateX(-100%);
+}
+
+@media screen and (max-width: 799px) {
+    h1 {
+        font-size: 28px;
+        font-weight: bold;
+
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+    p {
+        font-size: 1rem;
+    }
+
+}

@@ -1,0 +1,36 @@
+{
+  "name": "hocai",
+  "version": "1.0.0",
+  "description": "Tuần 1-2 - Thiết kế giao diện:  + Hồng: Giới thiệu hocAI, Đóng góp, Tuyển dụng, Chính sách bảo mật  + Duyên: Trang học tập (3 khoá học), Hướng dẫn sử dụng  + Công: Trang chủ, Trang đăng ký/ đăng nhập - Thiết kế cơ sở dữ liệu: Cả nhóm Tuần 3 - Thiết kế Front-end  + Công: Trang chủ, trang đăng ký đăng nhập  + Duyên: Trang học tập, Hướng dẫn sử dụng  + Hồng: Giới thiệu hocAI, Đóng góp, Tuyển dụng, Chính sách bảo mật Tuần 4:  - Xây dựng sever, Kết nối cơ sở dữ liệu: Hồng - Nhắn tin, hoàn thành đăng ký đăng nhập: Công Tuần 5: - Chức năng gửi form ( PHẢN HỒI ), hoàn thiện trang học tập : Duyên - Kết nối frontend-backend: Công",
+  "main": "server.js",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TuanAnh1107/hocai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TuanAnh1107/hocai/issues"
+  },
+  "homepage": "https://github.com/TuanAnh1107/hocai#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express-handlebars": "^8.0.1",
+    "express-mysql-session": "^3.0.3",
+    "express-session": "^1.18.1",
+    "express.js": "^1.0.0",
+    "googleapis": "^148.0.0",
+    "mysql2": "^3.14.1",
+    "natural": "^6.10.4"
+  }
+}

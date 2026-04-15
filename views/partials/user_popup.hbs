@@ -1,0 +1,34 @@
+<div class="popup-overlay" id="userPopupOverlay">
+    <div class="popup-container" id="userInfoPopup">
+        <div class="popup-header">
+            <h2>Thông tin tài khoản</h2>
+            <button class="popup-close-btn" id="closePopupBtn">&times;</button>
+        </div>
+        <div class="popup-content">
+            <p><strong>Tên người dùng:</strong> <span id="popup-username"></span>
+                <input type="text" id="edit-username" class="edit-input" style="display:none;" />
+            </p>
+            <p><strong>Tài khoản:</strong> <span id="popup-account"></span>
+                <input type="text" id="edit-account" class="edit-input" style="display:none;" />
+            </p>
+            <p><strong>Email:</strong> <span id="popup-email"></span>
+                <input type="email" id="edit-email" class="edit-input" style="display:none;" />
+            </p>
+            <p><strong>Mật khẩu:</strong>
+                <span id="popup-password" style="display:none;">********</span>
+                <input type="password" id="edit-password" class="edit-input" style="display:none;" placeholder="Nhập mật khẩu mới nếu muốn đổi" />
+            </p>
+            <p><strong>Ngày tạo tài khoản:</strong> <span id="popup-logindate"></span></p>
+            <hr>
+            <h4>Khóa học của tôi:</h4>
+            <div class="popup-scrollable-content" id="popup-courses">
+            </div>
+        </div>
+        <div class="popup-edit">
+            <button id="editUserBtn">Sửa</button>
+            <button id="saveUserBtn" style="display:none; background-color: #28a745; color: white;">Lưu</button>
+            <button id="cancelEditBtn" style="display:none;">Hủy</button>
+            <button type="button" id="logoutButtonFromPopup" style="background-color: #dc3545; color: white;">Đăng xuất</button>
+        </div>
+    </div>
+</div>

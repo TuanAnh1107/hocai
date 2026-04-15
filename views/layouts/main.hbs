@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="icon" type="image/png" href="/images/logo/web.png">
+    <link rel="stylesheet" href="/css/headfoot.css">
+    <link rel="stylesheet" href="/css/all.css">
+    {{#if css}}
+    <link rel="stylesheet" href="/css/{{css}}.css">
+    {{/if}}
+</head>
+
+<body>
+    {{> header}}
+
+    {{{body}}}
+
+    {{> footer}}
+
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/all.js"></script>
+    <script src="/js/search.js"></script>
+    {{#if js}}
+    <script src="/js/{{js}}.js"></script>
+    {{/if}}
+</body>
+
+</html>

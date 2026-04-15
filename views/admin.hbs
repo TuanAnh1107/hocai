@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HocAI - Quản lý</title>
+    <link rel="icon" type="image/png" href="/images/logo/web.png">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>TRANG QUẢN LÝ hocAI</h1>
+            <a href="/" class="link">Quay lại trang chủ</a>
+            <div class="admin-user-info">
+                <span>Xin chào, {{user.username}}</span>
+                <button id="logoutBtn" class="logout-btn">Đăng xuất</button>
+            </div>
+        </header>
+        
+        <main class="admin-content">
+
+            <div class="admin-section">
+                <h2>QUẢN LÝ BÀI HỌC</h2>
+                <div class="admin-actions">
+                    <button class="admin-btn" id="show-courses-btn">Danh sách khóa học</button>
+                </div>
+                <div id="course-list-container"></div>
+            </div>
+
+            <div class="admin-section">
+                <h2>QUẢN LÝ NGÂN HÀNG CÂU HỎI</h2>
+                <div class="admin-actions">
+                    <select id="select-course"><option value="">Chọn khoá học</option></select>
+                    <select id="select-chapter"><option value="">Chọn chương</option></select>
+                    <select id="select-lesson"><option value="">Chọn bài học</option></select>
+                </div>
+                <div id="question-list-container"></div>
+            </div>
+        </main>
+    </div>
+    <script src="/js/admin.js"></script>
+</body>
+</html> 

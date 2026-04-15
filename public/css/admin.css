@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.admin-header {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.admin-user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logout-btn {
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+.admin-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.admin-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.admin-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Danh sách khoá học */
+.course-list {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    width: 100%;
+}
+.course-list li {
+    display: flex;
+    flex-direction: column;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.2s;
+}
+.course-list li:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.course-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.course-name {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Danh sách chương */
+.chapter-list {
+    list-style: none;
+    margin: 10px 0;
+    padding: 15px;
+    width: 100%;
+    background: #f6faff;
+    border-radius: 5px;
+}
+.chapter-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d0e3f1;
+    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: white;
+}
+.chapter-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.chapter-name {
+    font-size: 16px;
+    color: #22577a;
+}
+
+/* Danh sách bài học */
+.lesson-list {
+    list-style: none;
+    margin: 8px 0;
+    padding: 12px;
+    width: 100%;
+    background: #fafafa;
+    border-radius: 5px;
+}
+.lesson-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+.lesson-name {
+    font-size: 14px;
+    color: #444;
+}
+
+/* Hiệu ứng click */
+.clickable {
+    cursor: pointer;
+    text-decoration: underline dotted #007bff;
+    transition: color 0.2s;
+}
+.clickable:hover {
+    color: #007bff;
+    text-decoration: underline solid #007bff;
+}
+
+/* Button Styles */
+.edit-btn, .edit-chapter-btn, .edit-lesson-btn, .done-btn, .cancel-btn {
+    margin-left: 10px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.edit-btn, .edit-chapter-btn, .edit-lesson-btn {
+    background: #ffc107;
+    color: #333;
+}
+
+.edit-btn, .edit-chapter-btn, .edit-lesson-btn:hover {
+    background: #e0a800;
+    transform: translateY(-1px);
+}
+
+.done-btn {
+    background: #28a745;
+    color: #fff;
+}
+
+.done-btn:hover {
+    background: #218838;
+    transform: translateY(-1px);
+}
+
+.cancel-btn {
+    background: #dc3545;
+    color: #fff;
+}
+
+.cancel-btn:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+}
+
+.edit-input {
+    font-size: 16px;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 70%;
+    margin-right: 10px;
+    transition: border-color 0.2s;
+}
+
+.edit-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+/* Select đẹp cho admin */
+.admin-actions select {
+    min-width: 160px;
+    max-width: 250px;
+    padding: 8px 12px;
+    border: 1.5px solid #007bff;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-right: 10px;
+    background: #f8faff;
+    color: #22577a;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    box-sizing: border-box;
+}
+.admin-actions select:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.15);
+}
+@media (max-width: 700px) {
+    .admin-actions select {
+        min-width: 100px;
+        max-width: 100%;
+        font-size: 14px;
+    }
+}
+
+/* Số thứ tự cho câu hỏi */
+.question-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    width: 100%;
+}
+.question-item {
+    background: #f6faff;
+    border: 1.5px solid #d0e3f1;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    padding: 16px 18px 12px 18px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.question-item::before {
+    content: counter(question-counter);
+    counter-increment: question-counter;
+    position: absolute;
+    left: -32px;
+    top: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    background: #e3f0ff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(0,123,255,0.07);
+}
+.question-list {
+    counter-reset: question-counter;
+}
+
+/* Button đẹp và hiệu ứng hover nổi bật */
+.edit-btn, .done-btn, .cancel-btn, .edit-question-btn, .edit-answer-btn {
+    margin-left: 10px;
+    padding: 7px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.edit-btn, .edit-question-btn, .edit-answer-btn {
+    background: #ffc107;
+    color: #333;
+}
+.edit-btn:hover, .edit-question-btn:hover, .edit-answer-btn:hover {
+    background: #ffb300;
+    color: #222;
+    transform: translateY(-2px) scale(1.04);
+}
+.done-btn {
+    background: #28a745;
+    color: #fff;
+}
+.done-btn:hover {
+    background: #218838;
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+}
+.cancel-btn {
+    background: #dc3545;
+    color: #fff;
+}
+.cancel-btn:hover {
+    background: #c82333;
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* Đảm bảo không tràn màn hình */
+.admin-section, .question-list, .chapter-list, .lesson-list {
+    max-width: 100vw;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+/* Đáp án */
+.answer-list {
+    list-style: none;
+    padding: 0 0 0 18px;
+    margin: 10px 0 0 0;
+}
+.answer-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+    background: #fff;
+    border-radius: 4px;
+    padding: 7px 10px;
+    border: 1px solid #e0e0e0;
+}
+.answer-text {
+    flex: 1;
+    font-size: 15px;
+    color: #444;
+}
+.correct-radio {
+    margin-left: 12px;
+    accent-color: #28a745;
+    width: 18px;
+    height: 18px;
+}
+.correct-label {
+    margin-left: 7px;
+    color: #28a745;
+    font-weight: 500;
+    font-size: 14px;
+} 

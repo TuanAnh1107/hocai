@@ -1,0 +1,57 @@
+.recruiment-image img {
+    width: 100%;
+    height: auto;
+
+}
+
+.recruiment-image {
+    animation: 1s slideInFromLeft ease-out forwards;
+}
+
+.recruiment-notification {
+    margin: 40px 0px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 2px 2px 20px rgba(0, 34, 59, 0.25);
+    overflow: visible;
+}
+
+.recruiment-notification h1 {
+    text-align: center;
+    color: #007ea7;
+    font-size: 50px;
+}
+
+.hightlight {
+    color: #007ea7;
+}
+
+.recruiment-content {
+    padding-left: 220px;
+}
+
+.recruiment-content>ul>li {
+    list-style-type: disc !important;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+@media screen and (min-width:799px) and (max-width: 1200px) {
+    .recruiment-content {
+        padding-left: 0px;
+    }
+
+
+}
+
+@media screen and (max-width: 799px) {
+    .recruiment-notification h1 {
+        font-size: 35px;
+    }
+
+    .recruiment-content {
+        padding-left: 10px;
+    }
+
+}
