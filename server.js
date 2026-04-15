@@ -257,16 +257,11 @@ function configureApp(pool) {
     }
 
     const sessionStoreOptions = {
-        host: dbConfig.HOST,
-        port: dbConfig.PORT,
-        user: dbConfig.USER,
-        password: dbConfig.PASSWORD,
-        database: dbConfig.DB,
-        ssl: dbConfig.SSL,
         clearExpired: true,
         checkExpirationInterval: 900000,
         expiration: 24 * 60 * 60 * 1000,
         createDatabaseTable: true,
+        endConnectionOnClose: false,
         schema: {
             tableName: 'sessions',
             columnNames: {
@@ -277,7 +272,9 @@ function configureApp(pool) {
         }
     };
 
-    const sessionStore = new MySQLStore(sessionStoreOptions);
+    // Reuse the application's TLS-enabled pool so the session store does not
+    // create a second insecure MySQL connection.
+    const sessionStore = new MySQLStore(sessionStoreOptions, pool);
 
     app.use(session({
         name: process.env.SESSION_COOKIE_NAME || 'connect.sid',
